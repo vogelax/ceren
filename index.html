@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ceren ❤️</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    overflow:hidden;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(-45deg,#ff9a9e,#fad0c4,#fbc2eb,#a18cd1);
+    background-size:400% 400%;
+    animation:bg 12s ease infinite;
+}
+
+@keyframes bg{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+.card{
+    background:rgba(255,255,255,.12);
+    backdrop-filter:blur(15px);
+    padding:50px;
+    border-radius:25px;
+    text-align:center;
+    color:white;
+    box-shadow:0 0 40px rgba(0,0,0,.2);
+    animation:fade 2s;
+}
+
+h1{
+    font-size:55px;
+    margin-bottom:20px;
+    text-shadow:0 0 20px pink;
+}
+
+p{
+    font-size:24px;
+    line-height:1.8;
+}
+
+.heart{
+    position:absolute;
+    color:#ff4d6d;
+    animation:fall linear infinite;
+    user-select:none;
+}
+
+@keyframes fall{
+0%{
+transform:translateY(-100px) scale(.8);
+opacity:0;
+}
+10%{opacity:1;}
+100%{
+transform:translateY(110vh) scale(1.4);
+opacity:0;
+}
+}
+
+@keyframes fade{
+from{opacity:0;transform:scale(.8);}
+to{opacity:1;transform:scale(1);}
+}
+</style>
+
+</head>
+<body>
+
+<div class="card">
+<h1>❤️ Ceren ❤️</h1>
+
+<p>
+Seni çok seviyorum güzelim. 💖<br><br>
+
+Beni dünyanın en mutlu erkeği yaptın.<br>
+İyi ki varsın...<br><br>
+
+Her gülüşün içimi ısıtıyor,<br>
+her mesajın yüzümü güldürüyor.<br><br>
+
+<b>İyi ki sen. ❤️</b>
+</p>
+
+</div>
+
+<script>
+function createHeart(){
+const heart=document.createElement("div");
+heart.className="heart";
+heart.innerHTML="❤";
+heart.style.left=Math.random()*100+"vw";
+heart.style.fontSize=(15+Math.random()*30)+"px";
+heart.style.animationDuration=(4+Math.random()*5)+"s";
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},9000);
+}
+
+setInterval(createHeart,180);
+</script>
+
+</body>
+</html>
